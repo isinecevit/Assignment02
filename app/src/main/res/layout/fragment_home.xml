@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/design_default_color_secondary"
     tools:context=".ui.home.HomeFragment">
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminate="false"
         android:layout_gravity="center"
-        app:indicatorSize="304dp"
-        app:trackThickness="42dp"
-        app:trackColor="?attr/colorTertiaryContainer"
+        android:indeterminate="false"
         app:indicatorColor="?attr/colorOnTertiaryContainer"
+        app:indicatorSize="304dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="?attr/colorTertiaryContainer"
+        app:trackThickness="42dp" />
 
     <TextView
         android:id="@+id/counter"
@@ -61,13 +62,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="56dp"
-        android:text="@string/start_text"
-        android:textSize="20sp"
         android:backgroundTint="?attr/colorSecondaryContainer"
+        android:text="@string/start_text"
         android:textColor="?attr/colorOnSecondaryContainer"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/count_button"
+        android:layout_width="112dp"
+        android:layout_height="70dp"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:text="@string/count_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
