@@ -15,6 +15,8 @@ import com.example.stepappv2.R;
 import com.example.stepappv2.databinding.FragmentHomeBinding;
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
+import java.util.Locale;
+
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private FragmentHomeBinding binding;
@@ -38,11 +40,11 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         startButton.setOnClickListener(this);
 
         stepCountsView = (TextView) root.findViewById(R.id.counter);
-        stepCountsView.setText("1000");
+        stepCountsView.setText("0");
 
         progressBar = (CircularProgressIndicator) root.findViewById(R.id.progressBar);
-        progressBar.setMax(6000);
-        progressBar.setProgress(1000);
+        progressBar.setMax(100);
+        progressBar.setProgress(0);
 
         return root;
     }
@@ -54,7 +56,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         } else if (view.getId() == R.id.start_button) {
             counter = 0;
         }
-        stepCountsView.setText(Integer.toString(counter));
+        stepCountsView.setText(String.format(Locale.ROOT, "%d", counter));
         progressBar.setProgress(counter);
     }
 
